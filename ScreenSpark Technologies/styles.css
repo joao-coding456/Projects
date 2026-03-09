@@ -8,10 +8,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* TO CHECK AFTER
-:root {
 
-} */
 header {
     position: fixed;
     display: flex;
@@ -19,9 +16,11 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    height: 5rem;
     padding: 12px 24px;
     background-color: #fff;
     z-index: 1000;
+    border-bottom: 2px solid rgba(36, 36, 36, 0.651);
 }
 
 .logo-container {
@@ -75,7 +74,10 @@ header {
     color: inherit;
 }
 .main-container {
-    padding-top: 120px;
+   
+    max-width: 1070px;
+    padding-top: 60px;
+    margin: auto;
 }
 .logo {
     width: 100px;
@@ -136,7 +138,7 @@ span {
 .about-container {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    gap: 30px;
+    gap: 10px;
     align-items: center;
     margin: auto;
 }
@@ -169,22 +171,63 @@ span {
     border: 1px solid rgba(0, 0, 0, 0.493);
 }
 
+.services-slider {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
 
-.web-container, .sub-container {
+.services-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    transition: transform 0.5s ease;
+}
+
+
+.sub-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
-} 
-.web-title {
-    text-align:left;
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #111;
+    color: white;
+    opacity: 0.4;
+    transition: opacity 0.8s ease;
 }
-.web-img, .services-img {
-    width: 34rem;
+
+.sub-container.active {
+    opacity: 1;
+}
+
+.services-img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    object-fit:cover;
     border-radius: 23px;
     border: 3px solid rgb(163, 163, 2);
-    outline:rgb(8, 8, 6)
+}
+
+.services-arrow {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
 .contact-subtitle {
@@ -296,6 +339,15 @@ footer {
     display: flex;
     justify-content: space-between;
     border-top: 1px solid black;
+}
+
+
+
+@media (min-width: 1024px) {
+    .small-description-container {
+        max-width: 620px;
+        margin: auto;
+    }
 }
 
 
